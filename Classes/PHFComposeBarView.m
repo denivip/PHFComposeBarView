@@ -1,5 +1,5 @@
 #import <QuartzCore/QuartzCore.h>
-#import <PHFDelegateChain/PHFDelegateChain.h>
+#import "PHFDelegateChain.h"
 #import "PHFComposeBarView.h"
 #import "PHFComposeBarView_TextView.h"
 #import "PHFComposeBarView_Button.h"
@@ -341,14 +341,14 @@ static CGFloat kTextViewToSuperviewHeightDelta;
         _textContainer = [UIButton buttonWithType:UIButtonTypeCustom];
         [_textContainer setFrame:textContainerFrame];
         [_textContainer setClipsToBounds:YES];
-        [_textContainer setBackgroundColor:[UIColor colorWithWhite:0.98f alpha:1.0f]];
+        [_textContainer setBackgroundColor:[UIColor clearColor]];
         [_textContainer setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
 
-        CALayer *layer = [_textContainer layer];
-        UIColor *borderColor = [UIColor colorWithHue:240.0f/360.0f saturation:0.02f brightness:0.8f alpha:1.0f];
-        [layer setBorderColor:[borderColor CGColor]];
-        [layer setBorderWidth:0.5f];
-        [layer setCornerRadius:kTextContainerCornerRadius];
+//        CALayer *layer = [_textContainer layer];
+//        UIColor *borderColor = [UIColor colorWithHue:240.0f/360.0f saturation:0.02f brightness:0.8f alpha:1.0f];
+//        [layer setBorderColor:[borderColor CGColor]];
+//        [layer setBorderWidth:0.5f];
+//        [layer setCornerRadius:kTextContainerCornerRadius];
 
         CGFloat textHeight = [self textHeight];
         [self setPreviousTextHeight:textHeight];
@@ -611,8 +611,8 @@ static CGFloat kTextViewToSuperviewHeightDelta;
     [self setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin];
 
     [self addSubview:[self topLineView]];
-    [self addSubview:[self backgroundView]];
-    [self addSubview:[self charCountLabel]];
+//    [self addSubview:[self backgroundView]];
+//    [self addSubview:[self charCountLabel]];
     [self addSubview:[self button]];
     [self addSubview:[self textContainer]];
 
